@@ -6,6 +6,7 @@ import Subpage1 from './pages/subpages/Subpage1';
 import Subpage2 from './pages/subpages/Subpage2';
 import Portal from './portal/Portal';
 import NotFound from './NotFound';
+import Empty from './pages/Empty';
 
 const routes = [
 	{
@@ -21,13 +22,24 @@ const routes = [
 				path: '/home',
 				component: Home,
 				routes: [
+					// Similar to line 39, we should add this in order to avoid the notfound route
+					{
+						path: '/home',
+						exact: true,
+						component: Empty
+					},
 					{
 						// Similar to path: '/'
 						// it contains the Route Component which is why, we did not add
-						// the co-child NotFound Route as seen in line 51 of Route.js
+						// the co-child NotFound Route as seen in line 63 of Route.js
 						path: '/home/page1',
 						component: Page1,
 						routes: [
+							{
+								path: '/home/page1',
+								exact: true,
+								component: Empty
+							},
 							{
 								path: '/home/page1/subpage1',
 								exact: true,

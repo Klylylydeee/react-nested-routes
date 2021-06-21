@@ -1,4 +1,4 @@
-import { Switch, Link } from 'react-router-dom';
+import { Switch, Link, Redirect } from 'react-router-dom';
 import RouteWithSubRoutes from './utils/RouteWithSubRoutes';
 
 const Home = ({ routes }) => {
