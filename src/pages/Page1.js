@@ -1,5 +1,6 @@
-import { Link, Switch } from 'react-router-dom';
+import { Link, Switch, Route } from 'react-router-dom';
 import RouteWithSubRoutes from '../utils/RouteWithSubRoutes';
+import NotFound from '../NotFound'
 
 const Page1 = ({ routes }) => {
 	const menu = [
@@ -29,6 +30,7 @@ const Page1 = ({ routes }) => {
 				{routes.map((route, i) => (
 					<RouteWithSubRoutes key={i} {...route} />
 				))}
+				<Route component={NotFound} />
 			</Switch>
 		</div>
 	);

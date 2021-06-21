@@ -11,7 +11,6 @@ function App() {
 				{routes.map((route, i) => (
 					<RouteWithSubRoutes key={i} {...route} />
 				))}
-				<Route component={NotFound} />
 			</Switch>
 		</BrowserRouter>
 	);
